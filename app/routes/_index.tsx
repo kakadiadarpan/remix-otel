@@ -21,7 +21,7 @@ export const meta: MetaFunction = () => {
 };
 
 export async function loader({ request }: LoaderFunctionArgs) {
-  const tracer = trace.getTracer('remix-home-page');
+  const tracer = trace.getTracer('remix-otel-app');
 
   return tracer.startActiveSpan('load-home-page', async (span) => {
     try {
